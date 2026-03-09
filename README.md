@@ -21,6 +21,7 @@ Ce projet simule une analyse de données réelle au sein d'un département RH en
 *Chaque étape est documentée et accessible via les liens ci-dessous :*
 
 ### 1️⃣ [NETTOYAGE & PRÉPARATION](./scripts/01_data_cleaning.sql)
+![Aperçu des données](./outputs/01_current_stats_preview.png)
 * Standardisation des dates (gestion du `9999-01-01`).
 * Création d'une table consolidée pour des jointures ultra-rapides.
 

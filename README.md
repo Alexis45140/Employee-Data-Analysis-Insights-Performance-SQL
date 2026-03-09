@@ -1,63 +1,62 @@
-Voici le README.md complet, structuré de manière professionnelle. Tu n'as plus qu'à copier-coller ce contenu dans un fichier nommé README.md à la racine de ton dépôt GitHub.
+# 📊 ANALYSE RH & BIG DATA SQL (300k+ LIGNES)
 
-📊 Analyse RH & Optimisation SQL (300k+ Employés)
-📝 Présentation du Projet
-Ce projet utilise la base de données célèbre "Employee" (provenant de GitHub) pour simuler une analyse de données réelle au sein d'un département RH. L'enjeu est de transformer plus de 300 000 enregistrements bruts en indicateurs stratégiques tout en garantissant des performances de calcul optimales.
+---
 
-🚀 Architecture du Projet
-Le projet est divisé en quatre étapes logiques, reflétant le workflow d'un Data Analyst Senior :
+## 📝 PRÉSENTATION DU PROJET
+Ce projet simule une analyse de données réelle au sein d'un département RH en utilisant la base de données **"Employees"**. L'objectif est de transformer des millions de points de données brutes en **décisions stratégiques**.
 
-[Nettoyage des données](./scripts/01_cleaning_and_setup.sql): Standardisation des dates et création d'une table de travail optimisée.
+> **Impact Business :** Identifier les écarts salariaux, analyser la rétention des talents et optimiser la performance des requêtes sur de gros volumes.
 
-[Analyses Business](./scripts/02_business_metrics.sql) : Analyse de la masse salariale, de la parité et des KPIs de rétention.
+---
 
-[Analyse Avancée](./scripts/03_advanced_window_functions.sql) : Utilisation de Window Functions pour le benchmarking salarial interne.
+## 🛠️ COMPÉTENCES TECHNIQUES DÉMONTRÉES
+* **Analyse Avancée :** Window Functions (`RANK`, `LEAD/LAG`, `AVG OVER`).
+* **Data Engineering :** Nettoyage de données, gestion des dates fictives et création de tables de travail.
+* **Performance :** Audit via `EXPLAIN` et optimisation par **Indexation B-Tree**.
+* **Calculs RH :** Turnover, masse salariale, Gender Pay Gap.
 
-[Optimisation Performance](./scripts/04_performance_optimization.sql) : Audit via EXPLAIN et mise en place d'index pour accélérer les requêtes.
+---
 
-🔍 Analyses Clés & Résultats
-1. Parité et Masse Salariale
-L'analyse montre la répartition des coûts par département. J'ai utilisé des agrégations complexes pour identifier les services ayant les budgets les plus élevés.
+## 🚀 ARCHITECTURE DES SCRIPTS
+*Chaque étape est documentée et accessible via les liens ci-dessous :*
 
-Insight : Le département Sales présente le salaire moyen le plus élevé, tandis que Development concentre la plus grosse masse salariale brute.
+### 1️⃣ [NETTOYAGE & PRÉPARATION](./scripts/01_cleaning_and_setup.sql)
+* Standardisation des dates (gestion du `9999-01-01`).
+* Création d'une table consolidée pour des jointures ultra-rapides.
 
-2. Benchmarking Salarial (Window Functions)
-Grâce à DENSE_RANK() et AVG() OVER(), j'ai mis en place un système permettant de situer chaque employé par rapport à ses pairs du même département.
+### 2️⃣ [INDICATEURS BUSINESS](./scripts/02_business_metrics.sql)
+* **Masse salariale par département.**
+* **Analyse de la parité** (Ecarts H/F par service).
+* Statistiques de promotion et de carrière.
 
-Top 3 des salaires par service.
+### 3️⃣ [ANALYSES AVANCÉES](./scripts/03_advanced_window_functions.sql)
+* **Benchmarking :** Comparaison du salaire de chaque employé par rapport à la moyenne de son département.
+* **Top Talents :** Classement des 3 meilleurs salaires par poste avec `DENSE_RANK()`.
 
-Écart à la moyenne calculé dynamiquement sur 240 000 lignes.
+### 4️⃣ [OPTIMISATION & PERFORMANCE](./scripts/04_performance_optimization.sql)
+* Analyse des plans d'exécution.
+* Réduction drastique du temps de recherche grâce aux **Index**.
 
-3. Optimisation technique
-Face à un volume de données important, l'optimisation était cruciale :
+---
 
-Avant : Scan complet de la table (ALL) sur les recherches de noms.
+## 📈 RÉSULTATS CLÉS
+| Département | Salaire Moyen | Effectif | Masse Salariale |
+| :--- | :--- | :--- | :--- |
+| **Sales** | 88,853€ | 37,701 | 3.3B € |
+| **Engineering** | 77,725€ | 30,701 | 2.3B € |
+| **Marketing** | 80,058€ | 14,842 | 1.1B € |
 
-Après : Création d'un index B-Tree réduisant le temps d'exécution de manière drastique (passage en mode ref).
+---
 
-🛠️ Stack Technique
-Moteur : MySQL / MariaDB
+## ⚙️ INSTALLATION
+1. Cloner le dépôt.
+2. Importer la base de données source.
+3. Exécuter les scripts dans l'ordre (`01` à `04`).
+4. Les captures d'écran des résultats sont disponibles dans le dossier **/outputs**.
 
-Concepts SQL maîtrisés :
+---
 
-Jointures complexes (Inner, Left Joins sur 5+ tables).
-
-CTEs (Common Table Expressions) pour la lisibilité.
-
-Window Functions (RANK, LAG, OVER PARTITION).
-
-DML & DDL : Création de vues, tables temporaires et index.
-
-📁 Comment utiliser ce Repo
-Importez la base de données source employees.sql.
-
-Exécutez les scripts du dossier /scripts dans l'ordre numérique.
-
-Les résultats détaillés et captures d'écran sont disponibles dans le dossier /outputs.
-
-👤 Contact
-N'hésitez pas à me contacter pour discuter de ce projet ou de toute opportunité en Data Analysis !
-
-LinkedIn : [Ton Lien LinkedIn]
-
-Portfolio : [Ton Site Web ou Portfolio]
+## 👤 CONTACT
+**Ton Prénom Nom**
+* [Mon Profil LinkedIn](TON_LIEN_LINKEDIN)
+* [Mon Portfolio](TON_LIEN_PORTFOLIO)

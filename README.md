@@ -20,20 +20,20 @@ Ce projet simule une analyse de données réelle au sein d'un département RH en
 ## 🚀 ARCHITECTURE DES SCRIPTS
 *Chaque étape est documentée et accessible via les liens ci-dessous :*
 
-### 1️⃣ [NETTOYAGE & PRÉPARATION](./scripts/01_cleaning_and_setup.sql)
+### 1️⃣ [NETTOYAGE & PRÉPARATION](./scripts/01_data_cleaning.sql)
 * Standardisation des dates (gestion du `9999-01-01`).
 * Création d'une table consolidée pour des jointures ultra-rapides.
 
-### 2️⃣ [INDICATEURS BUSINESS](./scripts/02_business_metrics.sql)
+### 2️⃣ [INDICATEURS BUSINESS](./scripts/02_business_insights)
 * **Masse salariale par département.**
 * **Analyse de la parité** (Ecarts H/F par service).
 * Statistiques de promotion et de carrière.
 
-### 3️⃣ [ANALYSES AVANCÉES](./scripts/03_advanced_window_functions.sql)
+### 3️⃣ [ANALYSES AVANCÉES](./scripts/03_advanced_window_functions)
 * **Benchmarking :** Comparaison du salaire de chaque employé par rapport à la moyenne de son département.
 * **Top Talents :** Classement des 3 meilleurs salaires par poste avec `DENSE_RANK()`.
 
-### 4️⃣ [OPTIMISATION & PERFORMANCE](./scripts/04_performance_optimization.sql)
+### 4️⃣ [OPTIMISATION & PERFORMANCE](./scripts/04_optimization.sql)
 * Analyse des plans d'exécution.
 * Réduction drastique du temps de recherche grâce aux **Index**.
 

@@ -1,0 +1,54 @@
+-- ==========================================
+-- PROJET : Analyse RH - Fonctions Avancées
+-- OBJECTIF : Benchmark salarial et classements internes
+-- ==========================================
+
+USE employees;
+
+-- 1. CLASSEMENT DES SALAIRES PAR DÉPARTEMENT
+-- On veut identifier les 3 plus gros salaires de chaque service.
+-- DENSE_RANK() est utilisé pour gérer les égalités sans sauter de rang.
+
+SELECT * FROM (
+    SELECT 
+        dept_name,
+        first_name,
+        last_name,
+        salary,
+        DENSE_RANK() OVER(PARTITION BY dept_name ORDER BY salary DESC) as rang_salaire
+    FROM current_employee_stats
+) AS ranked_salaries
+WHERE rang_salaire <= 3;
+
+
+-- 2. BENCHMARK : ÉCART AU SALAIRE MOYEN DU SERVICE
+-- Pour chaque employé, on calcule son écart par rapport à la moyenne de son propre département.
+-- Cela montre qui est "surpayé" ou "sous-payé" par rapport à ses pairs.
+
+SELECT 
+    first_name,
+    last_name,
+    dept_name,
+    salary,
+    -- Calcul de la moyenne du département sur chaque ligne sans faire de GROUP BY
+    ROUND(AVG(salary) OVER(PARTITION BY dept_name), 0) as avg_dept_salary,
+    -- Calcul de la différence
+    salary - ROUND(AVG(salary) OVER(PARTITION BY dept_name), 0) as difference_vs_avg
+FROM current_employee_stats
+ORDER BY difference_vs_avg DESC
+LIMIT 20;
+
+
+-- 3. ANALYSE DE L'ÉVOLUTION SALARIALE (HISTORIQUE)
+-- On utilise LAG() pour comparer le salaire actuel avec le salaire précédent
+-- pour voir le montant des dernières augmentations.
+
+SELECT 
+    emp_no,
+    salary as current_salary,
+    -- On récupère la valeur de la ligne précédente pour le même employé
+    LAG(salary) OVER(PARTITION BY emp_no ORDER BY from_date) as previous_salary,
+    salary - LAG(salary) OVER(PARTITION BY emp_no ORDER BY from_date) as increase_amount
+FROM salaries
+WHERE emp_no IN (SELECT emp_no FROM current_employee_stats LIMIT 100) -- Échantillon pour la démo
+ORDER BY emp_no, from_date;

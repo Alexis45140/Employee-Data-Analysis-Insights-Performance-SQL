@@ -58,5 +58,5 @@ Ce projet simule une analyse de données réelle au sein d'un département RH en
 
 ## 👤 CONTACT
 **Ton Prénom Nom**
-* [Mon Profil LinkedIn](TON_LIEN_LINKEDIN)
-* [Mon Portfolio](TON_LIEN_PORTFOLIO)
+* [Mon Profil LinkedIn](https://www.linkedin.com/in/alexis-claudeon/)
+* [Mon Portfolio](https://github.com/alexis45140)

@@ -7,13 +7,13 @@ Ce projet utilise la base de données célèbre "Employee" (provenant de GitHub)
 🚀 Architecture du Projet
 Le projet est divisé en quatre étapes logiques, reflétant le workflow d'un Data Analyst Senior :
 
-Nettoyage & Préparation : Standardisation des dates et création d'une table de travail optimisée.
+[Nettoyage des données](./scripts/01_cleaning_and_setup.sql): Standardisation des dates et création d'une table de travail optimisée.
 
-Indicateurs Business : Analyse de la masse salariale, de la parité et des KPIs de rétention.
+[Analyses Business](./scripts/02_business_metrics.sql) : Analyse de la masse salariale, de la parité et des KPIs de rétention.
 
-Analyses Avancées : Utilisation de Window Functions pour le benchmarking salarial interne.
+[Analyse Avancée](./scripts/03_advanced_window_functions.sql) : Utilisation de Window Functions pour le benchmarking salarial interne.
 
-Optimisation Performance : Audit via EXPLAIN et mise en place d'index pour accélérer les requêtes.
+[Optimisation Performance](./scripts/04_performance_optimization.sql) : Audit via EXPLAIN et mise en place d'index pour accélérer les requêtes.
 
 🔍 Analyses Clés & Résultats
 1. Parité et Masse Salariale

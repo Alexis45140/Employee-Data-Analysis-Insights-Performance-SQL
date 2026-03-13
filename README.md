@@ -37,7 +37,19 @@ Ce projet simule une analyse de données réelle au sein d'un département RH en
 ### 4️⃣ [OPTIMISATION & PERFORMANCE](./scripts/04_optimization.sql)
 * Analyse des plans d'exécution.
 * Réduction drastique du temps de recherche grâce aux **Index**.
+---
 
+## 📊 DASHBOARD INTERACTIF (TABLEAU)
+Pour donner vie à ces 300 000 lignes, j'ai conçu un dashboard décisionnel permettant d'explorer visuellement la structure de l'entreprise.
+
+### 🔍 Aperçu du Dashboard
+[![Dashboard RH Preview](./outputs/05_tableau_dashboard.png)](https://public.tableau.com/views/AnalysedesRessourcesHumaines-DashboardSQL/Tableaudebord1?:language=fr-FR&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+*Cliquez sur l'image pour accéder au dashboard interactif.*
+
+### 🎨 Choix de Visualisation :
+* **Palette Corporate :** Utilisation de teintes de bleu pour assurer une lecture professionnelle et neutre des données sensibles.
+* **Analyse de Corrélation :** Nuage de points comparant l'ancienneté au salaire pour identifier les progressions de carrière.
+* **KPIs Dynamiques :** Filtres par département et par titre pour un forage de données (Drill-down) instantané.
 ---
 
 ## 📈 RÉSULTATS CLÉS

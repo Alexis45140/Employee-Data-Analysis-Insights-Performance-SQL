@@ -70,6 +70,6 @@ Pour donner vie à ces 300 000 lignes, j'ai conçu un dashboard décisionnel per
 ---
 
 ## 👤 CONTACT
-**Ton Prénom Nom**
+**Claudeon Alexis**
 * [Mon Profil LinkedIn](https://www.linkedin.com/in/alexis-claudeon/)
 * [Mon Portfolio](https://github.com/alexis45140)

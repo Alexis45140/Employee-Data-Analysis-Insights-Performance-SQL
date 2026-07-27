@@ -1,0 +1,29 @@
+version: 2
+
+sources:
+  - name: hr
+    schema: employees
+    tables:
+      - name: employees
+      - name: salaries
+      - name: titles
+      - name: dept_emp
+      - name: departments
+
+models:
+  - name: stg_employees
+    description: Employés avec dates sécurisées (hire_date future → date du jour)
+    columns:
+      - name: emp_no
+        tests: [unique, not_null]
+  - name: stg_salaries
+    description: Historique complet des salaires, non filtré
+  - name: stg_titles
+    description: Historique complet des postes, non filtré
+  - name: stg_departments
+    description: Référentiel des départements
+    columns:
+      - name: dept_no
+        tests: [unique, not_null]
+  - name: stg_dept_emp
+    description: Historique d'affectation employé ↔ département

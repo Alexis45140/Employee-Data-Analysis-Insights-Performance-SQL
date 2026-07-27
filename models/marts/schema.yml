@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: mart_current_employee_stats
+    description: Table pivot - situation actuelle de chaque employe
+    columns:
+      - name: emp_no
+        tests: [unique, not_null]
+  - name: mart_dept_kpis
+    description: KPIs RH par departement
+  - name: mart_promotion_time
+    description: Temps moyen avant un poste Senior
+  - name: mart_loyal_talents
+    description: Top 10 employes fideles et bien remuneres
+  - name: mart_salary_ranking
+    description: Top 3 salaires par departement
+  - name: mart_salary_benchmark
+    description: Ecart salaire vs moyenne du departement
+  - name: mart_salary_evolution
+    description: Historique des augmentations de salaire

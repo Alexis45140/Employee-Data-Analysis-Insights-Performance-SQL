@@ -1,0 +1,15 @@
+name: 'hr_analytics'
+version: '1.0.0'
+config-version: 2
+
+profile: 'hr_analytics'
+
+model-paths: ["models"]
+test-paths: ["tests"]
+
+models:
+  hr_analytics:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

@@ -1,6 +1,6 @@
 # 📊 HR Analytics — Pipeline dbt sur MySQL
 
-Analyse RH orientée business (turnover, masse salariale, équité salariale) construite sur la base de données publique `employees` (~300 000 lignes), avec un pipeline de transformation **dbt** en couches staging → marts et des tests de qualité automatisés.
+Analyse RH orientée business (turnover, masse salariale, équité salariale) construite sur la base de données publique `employees` (~300 000 lignes), avec un pipeline de transformation **dbt** en couches staging → marts et des tests de qualité déclarés dans `schema.yml`.
 
 ## 🎯 Contexte & objectif métier
 
@@ -56,7 +56,7 @@ MySQL (base "employees", ~300k lignes)
 
 ## ✅ Qualité & fiabilité
 
-Chaque exécution du pipeline est validée par des tests automatisés :
+Chaque exécution du pipeline est validée par des tests dbt :
 - Intégrité référentielle (`unique`, `not_null` sur les clés)
 - Test métier custom : aucun salaire négatif ou nul ne doit exister dans la table pivot
 

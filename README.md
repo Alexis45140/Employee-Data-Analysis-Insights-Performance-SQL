@@ -6,6 +6,10 @@ Analyse RH orientée business (turnover, masse salariale, équité salariale) co
 
 Un service RH veut piloter ses effectifs et sa politique salariale à partir de données fiables : quel département coûte le plus cher ? Combien de temps faut-il pour atteindre un poste senior ? Les écarts de salaire au sein d'un même département sont-ils justifiés ? Ce projet répond à ces questions via un pipeline reproductible, testé, plutôt que des requêtes ponctuelles.
 
+**Recommandation** : chercher les inéquités à l'intérieur de chaque département, en partant des plus grands écarts individuels à la moyenne (`mart_salary_benchmark`), plutôt qu'entre départements : le salaire moyen est 39 % plus élevé en Sales qu'en Human Resources, mais cet écart compare deux métiers.
+
+**Limite** : ces moyennes sont brutes, elles ne tiennent compte ni du poste occupé ni de l'ancienneté ; la base `employees` est un jeu de test public, sans devise.
+
 ## 🏗️ Architecture
 
 ```
@@ -48,7 +52,7 @@ MySQL (base "employees", ~300k lignes)
 - **Écart salarial entre départements** : salaire moyen de 88 853 en Sales contre 63 922 en Human Resources, soit **39 % de plus** en Sales, sur 9 départements (`mart_dept_kpis`, [capture](outputs/02_salary_analysis.png))
 - **KPIs par département** : effectif, salaire moyen, masse salariale totale (`mart_dept_kpis`)
 - **Temps moyen de promotion** vers un poste senior (`mart_promotion_time`)
-- **Top 10 des talents fidèles** : ancienneté > 15 ans et salaire > 80k€ (`mart_loyal_talents`)
+- **Top 10 des talents fidèles** : ancienneté > 15 ans et salaire > 80 000 (`mart_loyal_talents`)
 - **Classement des 3 meilleurs salaires par département** (`mart_salary_ranking`)
 - **Écarts salariaux individuels vs moyenne du département**, pour repérer les anomalies (`mart_salary_benchmark`)
 - **Historique des augmentations** sur un échantillon de 100 employés (`mart_salary_evolution`)

@@ -45,6 +45,7 @@ MySQL (base "employees", ~300k lignes)
 
 ## 📈 Résultats clés
 
+- **Écart salarial entre départements** : salaire moyen de 88 853 en Sales contre 63 922 en Human Resources, soit **39 % de plus** en Sales, sur 9 départements (`mart_dept_kpis`, [capture](outputs/02_salary_analysis.png))
 - **KPIs par département** : effectif, salaire moyen, masse salariale totale (`mart_dept_kpis`)
 - **Temps moyen de promotion** vers un poste senior (`mart_promotion_time`)
 - **Top 10 des talents fidèles** : ancienneté > 15 ans et salaire > 80k€ (`mart_loyal_talents`)
